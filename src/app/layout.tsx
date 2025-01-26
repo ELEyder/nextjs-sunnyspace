@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Nav from "../components/Nav";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -22,11 +23,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const userLogin: UserLogin = {
+    firstName: "John",
+    lastName: "Doe",
+    status: "Active",
+    urlAvatar: "/img/favicon.jpg",
+  }
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Nav userLogin={userLogin}/>
         {children}
       </body>
     </html>
