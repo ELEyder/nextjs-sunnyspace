@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import './page.css'
 
 export default function Chat() {
@@ -17,7 +18,7 @@ export default function Chat() {
                     </div>
                     <div id="addChat" className="friend-chat" >
                         <div className="avatar-icon">
-                            <img src="/img/favicon.jpg" alt="avatar" className="avatar-icon" />
+                            <Image src="/img/favicon.jpg" alt="avatar" className="avatar-icon" />
                         </div>
                         <h2> friend.firstName  friend.lastName </h2>
                     </div>

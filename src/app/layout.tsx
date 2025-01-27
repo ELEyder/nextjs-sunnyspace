@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Nav from "../components/Nav";
-import Script from 'next/script';
+import { UserLogin } from '../interfaces/UserLogin';
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 

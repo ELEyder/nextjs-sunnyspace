@@ -1,5 +1,7 @@
 import './Nav.css'
 import Link from 'next/link';
+import { UserLogin } from '../interfaces/UserLogin';
+import Image from 'next/image';
 
 interface NavProps {
   userLogin: UserLogin;
@@ -11,7 +13,7 @@ export default function Nav( { userLogin }  : NavProps ) {
         <div className="home">
           <Link href={"/"}>
             <div className="logo">
-              <img src="/img/favicon.ico" alt="avatar" className="logo" />
+              <Image src="/img/favicon.ico" alt="avatar" className="logo" />
             </div>
           </Link>
           <input className="logo" type="text" placeholder="Search in Senatinet" />
@@ -19,7 +21,7 @@ export default function Nav( { userLogin }  : NavProps ) {
         <div className="info-user">
           <Link href="/user/profile">
             <div className="avatar-icon">
-              <img src={ userLogin.urlAvatar } alt="avatar" className="avatar-icon" />
+              <Image src={ userLogin.urlAvatar } alt="avatar" className="avatar-icon" />
             </div>
           </Link>
           <div className="text-user">

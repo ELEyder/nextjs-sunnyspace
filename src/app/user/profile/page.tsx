@@ -1,6 +1,7 @@
 import './page.css';
 import '../../post.css';
 import '../../comment.css';
+import Image from 'next/image';
 
 export default function Profile() {
   return (
@@ -8,7 +9,7 @@ export default function Profile() {
         <section className="profile">
             <div className="your-profile">
                 <div className="avatar">
-                    <img src="{{ userData.urlAvatar }}" alt="avatar" className="avatar"/>
+                    <Image src="{{ userData.urlAvatar }}" alt="avatar" className="avatar"/>
                 </div>
                 <h1 className="profile"> userData.firstName </h1>
                 <h2 className="profile"> userData.username</h2>
@@ -19,7 +20,7 @@ export default function Profile() {
                 <a className="friend" href="{% url 'viewUser' username=friend.username %}">
                     <div className="friend">
                         <div className="avatar-icon friend-icon">
-                            <img src="{{ friend.urlAvatar }}" alt="avatar" className="avatar-icon"/>
+                            <Image src="/img/favicon.jpg" alt="avatar" className="avatar-icon"/>
                         </div>
                         <p> friend.firstName friend.lastName </p>
                     </div>
@@ -31,19 +32,19 @@ export default function Profile() {
                 <div className="post-header">
                     <a href="{% url 'viewUser' username=post.authorUsername %}">
                         <div className="avatar-icon">
-                            <img src="{{ post.authorAvatar }}" alt="avatar" className="avatar-icon"/>
+                            <Image src="/img/favicon.jpg" alt="avatar" className="avatar-icon"/>
                             </div>
                     </a>
                     <div>
                         <a href="{% url 'viewUser' username=post.authorUsername %}" className="author-name"> post.authorName </a> <a href=""> post.action </a>
-                        <p className="post"> post.date|date:"F j, Y, P" </p>
+                        <p className="post"> post.date </p>
                     </div>
                 </div>
                 <div className="post-main">
                     <p className="content"> post.content </p>
                 </div>
                 <div className="post-media">
-                        <img src="{{ post.urlMedia }}" alt="" className="media"/>
+                        <Image src="/img/favicon.jpg" alt="" className="media"/>
                         <video controls className="media">
                             <source className="media" src="{{ post.urlMedia }}" type="video/mp4"/>
                             <source className="media" src="{{ post.urlMedia }}" type="video/avi"/>
@@ -60,7 +61,7 @@ export default function Profile() {
                         <div className="comment-header">
                             <a href="{% url 'viewUser' username=comment.authorUsername %}">
                                 <div className="avatar-icon-comment">
-                                    <img src="{{ comment.authorAvatar }}" alt="avatar" className="avatar-icon-comment"/>
+                                    <Image src="{{ comment.authorAvatar }}" alt="avatar" className="avatar-icon-comment"/>
                                 </div>
                             </a>
                         </div>
