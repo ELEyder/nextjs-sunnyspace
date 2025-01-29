@@ -69,7 +69,7 @@ export default function Home() {
                     </button>
                 </form>
             </div>
-            <audio id="like-mp3" src="{% static 'audio/like.mp3' %}"></audio>
+            <audio id="like-mp3" src="/audio/like.mp3"></audio>
         </section>
         <section className="usuarios">
             <div className="users">

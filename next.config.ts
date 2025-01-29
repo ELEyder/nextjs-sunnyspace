@@ -1,9 +1,9 @@
-import type { NextConfig } from "next";
+const isProd = process.env.NODE_ENV === 'production';
 
-const nextConfig: NextConfig = {
+module.exports = {
   output: 'export',
-  basePath: '/nextjs-sunnyspace',
-  assetPrefix: '/nextjs-sunnyspace',
+  assetPrefix: isProd ? '/nextjs-sunnyspace/' : '',
+  images: {
+    unoptimized: true,
+  },
 };
-
-export default nextConfig;
